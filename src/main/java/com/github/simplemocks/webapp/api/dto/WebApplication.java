@@ -1,5 +1,6 @@
 package com.github.simplemocks.webapp.api.dto;
 
+import com.github.simple_mocks.localization_service.api.dto.LocalizationId;
 import jakarta.annotation.Nonnull;
 
 import java.util.Set;
@@ -33,10 +34,10 @@ public interface WebApplication {
     /**
      * Web application icon code
      *
-     * @return icon code
+     * @return icon localization code
      */
     @Nonnull
-    String getIconCode();
+    LocalizationId getIconCode();
 
     /**
      * Web application title localization code
@@ -44,7 +45,7 @@ public interface WebApplication {
      * @return title localization code
      */
     @Nonnull
-    String getTitleCode();
+    LocalizationId getTitleCode();
 
     /**
      * Web application description localization code
@@ -52,7 +53,7 @@ public interface WebApplication {
      * @return description localization code
      */
     @Nonnull
-    String getDescriptionCode();
+    LocalizationId getDescriptionCode();
 
     /**
      * Web application tags. Tags are used for filtering web applications.
