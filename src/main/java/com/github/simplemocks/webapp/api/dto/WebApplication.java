@@ -1,8 +1,9 @@
 package com.github.simplemocks.webapp.api.dto;
 
-import com.github.simple_mocks.localization_service.api.dto.LocalizationId;
+import com.github.simplemocks.localization_service.api.dto.LocalizationId;
 import jakarta.annotation.Nonnull;
 
+import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Set;
  * @author sibmaks
  * @since 0.0.1
  */
-public interface WebApplication {
+public interface WebApplication extends Serializable {
 
     /**
      * Web application code, used for application identification.<br/>

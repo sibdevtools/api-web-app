@@ -29,6 +29,7 @@ dependencies {
 
     implementation("jakarta.annotation:jakarta.annotation-api:${project.property("lib_annotation_api_version")}")
 
+    implementation("com.github.simple-mocks:api-common:${project.property("lib_api_common_version")}")
     implementation("com.github.simple-mocks:api-localization:${project.property("lib_api_localization_version")}")
 
 }

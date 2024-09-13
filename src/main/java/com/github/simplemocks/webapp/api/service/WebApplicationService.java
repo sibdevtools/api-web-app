@@ -1,11 +1,10 @@
 package com.github.simplemocks.webapp.api.service;
 
-import com.github.simplemocks.webapp.api.dto.WebApplication;
 import com.github.simplemocks.webapp.api.rq.GetApplicationRq;
 import com.github.simplemocks.webapp.api.rq.SearchByTagsRq;
+import com.github.simplemocks.webapp.api.rs.GetWebApplicationRs;
+import com.github.simplemocks.webapp.api.rs.SearchWebApplicationsRs;
 import jakarta.annotation.Nonnull;
-
-import java.util.List;
 
 /**
  * Service for interacting with web applications
@@ -23,7 +22,7 @@ public interface WebApplicationService {
      * @return web application instance
      */
     @Nonnull
-    WebApplication getByCode(@Nonnull GetApplicationRq rq);
+    GetWebApplicationRs getByCode(@Nonnull GetApplicationRq rq);
 
     /**
      * Search applications by tags.<br/>
@@ -33,5 +32,5 @@ public interface WebApplicationService {
      * @return found applications
      */
     @Nonnull
-    List<WebApplication> searchByTags(@Nonnull SearchByTagsRq rq);
+    SearchWebApplicationsRs searchByTags(@Nonnull SearchByTagsRq rq);
 }
