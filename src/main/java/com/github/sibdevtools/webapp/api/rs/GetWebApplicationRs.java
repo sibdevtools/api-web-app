@@ -1,8 +1,8 @@
-package com.github.simplemocks.webapp.api.rs;
+package com.github.sibdevtools.webapp.api.rs;
 
-import com.github.simplemocks.common.api.dto.ErrorRsDto;
-import com.github.simplemocks.common.api.rs.StandardBodyRs;
-import com.github.simplemocks.webapp.api.dto.WebApplication;
+import com.github.sibdevtools.common.api.dto.ErrorRsDto;
+import com.github.sibdevtools.common.api.rs.StandardBodyRs;
+import com.github.sibdevtools.webapp.api.dto.WebApplication;
 import jakarta.annotation.Nonnull;
 
 /**

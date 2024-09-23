@@ -1,9 +1,9 @@
-package com.github.simplemocks.webapp.api.service;
+package com.github.sibdevtools.webapp.api.service;
 
-import com.github.simplemocks.webapp.api.rq.GetApplicationRq;
-import com.github.simplemocks.webapp.api.rq.SearchByTagsRq;
-import com.github.simplemocks.webapp.api.rs.GetWebApplicationRs;
-import com.github.simplemocks.webapp.api.rs.SearchWebApplicationsRs;
+import com.github.sibdevtools.webapp.api.rs.GetWebApplicationRs;
+import com.github.sibdevtools.webapp.api.rq.GetApplicationRq;
+import com.github.sibdevtools.webapp.api.rq.SearchByTagsRq;
+import com.github.sibdevtools.webapp.api.rs.SearchWebApplicationsRs;
 import jakarta.annotation.Nonnull;
 
 /**

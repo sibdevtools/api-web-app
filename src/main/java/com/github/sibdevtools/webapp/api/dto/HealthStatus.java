@@ -1,4 +1,4 @@
-package com.github.simplemocks.webapp.api.dto;
+package com.github.sibdevtools.webapp.api.dto;
 
 /**
  * Health status code

@@ -1,6 +1,6 @@
-package com.github.simplemocks.webapp.api.dto;
+package com.github.sibdevtools.webapp.api.dto;
 
-import com.github.simplemocks.localization_service.api.dto.LocalizationId;
+import com.github.sibdevtools.localization.api.dto.LocalizationId;
 import jakarta.annotation.Nonnull;
 
 import java.io.Serializable;

@@ -29,8 +29,8 @@ dependencies {
 
     implementation("jakarta.annotation:jakarta.annotation-api:${project.property("lib_annotation_api_version")}")
 
-    implementation("com.github.simple-mocks:api-common:${project.property("lib_api_common_version")}")
-    implementation("com.github.simple-mocks:api-localization:${project.property("lib_api_localization_version")}")
+    implementation("com.github.sibdevtools:api-common:${project.property("lib_api_common_version")}")
+    implementation("com.github.sibdevtools:api-localization:${project.property("lib_api_localization_version")}")
 
 }
 
@@ -77,7 +77,7 @@ publishing {
             from(components["java"])
             pom {
                 packaging = "jar"
-                url = "https://github.com/simple-mocks/api-web-app"
+                url = "https://github.com/sibdevtools/api-web-app"
 
                 licenses {
                     license {
@@ -87,9 +87,9 @@ publishing {
                 }
 
                 scm {
-                    connection.set("scm:https://github.com/simple-mocks/api-web-app.git")
-                    developerConnection.set("scm:git:ssh://github.com/simple-mocks")
-                    url.set("https://github.com/simple-mocks/api-web-app")
+                    connection.set("scm:https://github.com/sibdevtools/api-web-app.git")
+                    developerConnection.set("scm:git:ssh://github.com/sibdevtools")
+                    url.set("https://github.com/sibdevtools/api-web-app")
                 }
 
                 developers {

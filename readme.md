@@ -1,4 +1,4 @@
-# Simple Mock - Web Application API
+# SibDevTools - Web Application API
 
 ## To build
 
