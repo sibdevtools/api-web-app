@@ -71,4 +71,15 @@ public interface WebApplication extends Serializable {
      */
     @Nonnull
     HealthStatus getHealthStatus();
+
+    /**
+     * Web application version, used for shown client application version.<br/>
+     * Example: {@code 0.0.1}
+     *
+     * @return application version
+     */
+    @Nonnull
+    default String getVersion() {
+        return "";
+    }
 }
