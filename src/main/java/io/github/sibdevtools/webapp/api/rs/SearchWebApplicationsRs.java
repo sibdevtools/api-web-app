@@ -1,8 +1,8 @@
-package com.github.sibdevtools.webapp.api.rs;
+package io.github.sibdevtools.webapp.api.rs;
 
-import com.github.sibdevtools.webapp.api.dto.WebApplication;
-import com.github.sibdevtools.common.api.dto.ErrorRsDto;
-import com.github.sibdevtools.common.api.rs.StandardBodyRs;
+import io.github.sibdevtools.webapp.api.dto.WebApplication;
+import io.github.sibdevtools.common.api.dto.ErrorRsDto;
+import io.github.sibdevtools.common.api.rs.StandardBodyRs;
 import jakarta.annotation.Nonnull;
 
 import java.util.ArrayList;

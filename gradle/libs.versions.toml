@@ -1,0 +1,16 @@
+[versions]
+sonarqube = "7.4.0.8496"
+lombok = "1.18.46"
+jakartaAnnotationApi = "3.0.0"
+sibDevToolsCommonApi = "0.0.1"
+sibDevToolsLocalizationApi = "0.0.7"
+
+[libraries]
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+jakarta-annotation-api = { module = "jakarta.annotation:jakarta.annotation-api", version.ref = "jakartaAnnotationApi" }
+
+common-api = { module = "io.github.sibdevtools:api-common", version.ref = "sibDevToolsCommonApi" }
+localization-api = { module = "io.github.sibdevtools:api-localization", version.ref = "sibDevToolsLocalizationApi" }
+
+[plugins]
+sonarqube = { id = "org.sonarqube", version.ref = "sonarqube" }

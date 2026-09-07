@@ -1,4 +1,4 @@
-package com.github.sibdevtools.webapp.api.rq;
+package io.github.sibdevtools.webapp.api.rq;
 
 import jakarta.annotation.Nonnull;
 import lombok.Builder;

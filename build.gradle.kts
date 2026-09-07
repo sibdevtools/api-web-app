@@ -4,13 +4,17 @@ import java.util.*
 plugins {
     id("maven-publish")
     id("java")
+    alias(libs.plugins.sonarqube)
 }
 
+val organizationName = "${project.property("organization_name")}"
+val projectName = "${project.property("project_name")}"
 val versionFromProperty = "${project.property("version")}"
 val versionFromEnv: String? = System.getenv("VERSION")
 
 version = versionFromEnv ?: versionFromProperty
 group = "${project.property("group")}"
+description = "SibDevTools web application project API"
 
 val targetJavaVersion = (project.property("jdk_version") as String).toInt()
 val javaVersion = JavaVersion.toVersion(targetJavaVersion)
@@ -21,19 +25,18 @@ java {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
-    maven(url = "https://nexus.sibmaks.ru/repository/maven-snapshots/")
-    maven(url = "https://nexus.sibmaks.ru/repository/maven-releases/")
 }
 
 dependencies {
-    compileOnly("org.projectlombok:lombok:${project.property("lib_lombok_version")}")
-    annotationProcessor("org.projectlombok:lombok:${project.property("lib_lombok_version")}")
+    compileOnly(libs.lombok)
+    annotationProcessor(libs.lombok)
 
-    implementation("jakarta.annotation:jakarta.annotation-api:${project.property("lib_annotation_api_version")}")
+    implementation(libs.jakarta.annotation.api)
 
-    implementation("com.github.sibdevtools:api-common:${project.property("lib_api_common_version")}")
-    implementation("com.github.sibdevtools:api-localization:${project.property("lib_api_localization_version")}")
+    implementation(libs.common.api)
+    implementation(libs.localization.api)
 
 }
 
@@ -58,7 +61,7 @@ java {
 
 tasks.jar {
     from("LICENSE") {
-        rename { "${it}_${project.property("project_name")}" }
+        rename { "${it}_${projectName}" }
     }
     manifest {
         attributes(
@@ -74,25 +77,45 @@ tasks.jar {
     }
 }
 
+tasks.register("printVersion") {
+    doLast {
+        println(project.version)
+    }
+}
+
+sonar {
+    properties {
+        property("sonar.organization", organizationName)
+        property("sonar.projectKey", "${organizationName}_${projectName}")
+        property("sonar.projectName", projectName)
+        property("sonar.host.url", project.property("sonar.host.url") ?: "https://sonarcloud.io")
+        property("sonar.sourceEncoding", "UTF-8")
+        property("sonar.java.coveragePlugin", "jacoco")
+        property("sonar.scm.disabled", "true")
+    }
+}
+
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
             pom {
                 packaging = "jar"
-                url = "https://github.com/sibdevtools/api-web-app"
+                name.set(projectName)
+                description.set("SibDevTools error service API")
+                url = "https://github.com/${organizationName}/${projectName}"
 
                 licenses {
                     license {
-                        name.set("The MIT License (MIT)")
-                        url.set("https://www.mit.edu/~amini/LICENSE.md")
+                        name.set("MIT License")
+                        url.set("https://opensource.org/licenses/MIT")
                     }
                 }
 
                 scm {
-                    connection.set("scm:https://github.com/sibdevtools/api-web-app.git")
-                    developerConnection.set("scm:git:ssh://github.com/sibdevtools")
-                    url.set("https://github.com/sibdevtools/api-web-app")
+                    connection.set("scm:git:https://github.com/${organizationName}/${projectName}.git")
+                    developerConnection.set("scm:git:ssh://github.com/${organizationName}/${projectName}.git")
+                    url.set("https://github.com/${organizationName}/${projectName}")
                 }
 
                 developers {
@@ -102,17 +125,6 @@ publishing {
                         email.set("sibmaks@vk.com")
                     }
                 }
-            }
-        }
-    }
-    repositories {
-        maven {
-            val releasesUrl = uri("https://nexus.sibmaks.ru/repository/maven-releases/")
-            val snapshotsUrl = uri("https://nexus.sibmaks.ru/repository/maven-snapshots/")
-            url = if (version.toString().endsWith("SNAPSHOT")) snapshotsUrl else releasesUrl
-            credentials {
-                username = project.findProperty("nexus_username")?.toString() ?: System.getenv("NEXUS_USERNAME")
-                password = project.findProperty("nexus_password")?.toString() ?: System.getenv("NEXUS_PASSWORD")
             }
         }
     }

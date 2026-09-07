@@ -1,6 +1,6 @@
-package com.github.sibdevtools.webapp.api.dto;
+package io.github.sibdevtools.webapp.api.dto;
 
-import com.github.sibdevtools.localization.api.dto.LocalizationId;
+import io.github.sibdevtools.localization.api.dto.LocalizationId;
 import jakarta.annotation.Nonnull;
 
 import java.io.Serializable;

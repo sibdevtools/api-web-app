@@ -1,4 +1,4 @@
-package com.github.sibdevtools.webapp.api.dto;
+package io.github.sibdevtools.webapp.api.dto;
 
 /**
  * Health status code

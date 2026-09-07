@@ -1,9 +1,9 @@
-package com.github.sibdevtools.webapp.api.service;
+package io.github.sibdevtools.webapp.api.service;
 
-import com.github.sibdevtools.webapp.api.rs.GetWebApplicationRs;
-import com.github.sibdevtools.webapp.api.rq.GetApplicationRq;
-import com.github.sibdevtools.webapp.api.rq.SearchByTagsRq;
-import com.github.sibdevtools.webapp.api.rs.SearchWebApplicationsRs;
+import io.github.sibdevtools.webapp.api.rs.GetWebApplicationRs;
+import io.github.sibdevtools.webapp.api.rq.GetApplicationRq;
+import io.github.sibdevtools.webapp.api.rq.SearchByTagsRq;
+import io.github.sibdevtools.webapp.api.rs.SearchWebApplicationsRs;
 import jakarta.annotation.Nonnull;
 
 /**
